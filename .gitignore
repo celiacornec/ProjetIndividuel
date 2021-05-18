@@ -1,0 +1,5 @@
+projetIndividuel/db.sqlite3
+.idea/
+*.pyc
+venv/
+*.log
