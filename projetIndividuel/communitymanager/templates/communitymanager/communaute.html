@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affichage des posts d'une communaute</title>
+</head>
+<body>
+
+<h1>Posts de {{communaute.nom}}</h1>
+
+{% for post in posts %}
+
+    <a href="{% url 'post' post.id %}">
+      - {{post.titre}}
+      </a>
+
+{% endfor %}
+
+</body>
+</html>
