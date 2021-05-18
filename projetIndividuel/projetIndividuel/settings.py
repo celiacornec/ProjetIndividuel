@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = 'admin/'
+LOGIN_REDIRECT_URL = '/communitymanager/communautes'
 LOGOUT_REDIRECT_URL = 'accounts/login/'
 
 

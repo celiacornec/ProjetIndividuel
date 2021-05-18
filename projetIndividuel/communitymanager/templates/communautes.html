@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des communautés</title>
+</head>
+<body>
+
+<h1>Voici la liste des communautés !</h1>
+
+{% for communaute in communautes %}
+        <p>{{communaute.nom}}</p>
+{% endfor %}
+
+</body>
+</html>
