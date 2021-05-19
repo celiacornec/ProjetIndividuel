@@ -10,9 +10,12 @@
 
 {% for post in posts %}
 
-    <a href="{% url 'post' post.id %}">
-      - {{post.titre}}
+    <a href="{% url 'Affichage des posts' post.id %}">
+      {{post.titre}}
       </a>
+
+{% empty %}
+<p>Pas de posts.</p>
 
 {% endfor %}
 

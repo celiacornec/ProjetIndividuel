@@ -10,20 +10,24 @@
 
 {% for communaute in communautes %}
 
-    <h3>- {{communaute.nom}}</h3>
+    <h3><a href="{% url 'Affichage des posts' communaute.id %}">
+        {{communaute.nom}}</a></h3>
 
     {% if communaute.abonnement %}
         Vous êtes abonné à cette communauté
-    <a href="{% url 'modifabonnement' communaute.id 0%}">
+    <a href="{% url 'Modification abonnement' communaute.id 0%}">
         <button>Se désabonner</button>
     </a>
 
     {% else %}
         Vous n'êtes pas abonné à cette communauté
-    <a href="{% url 'modifabonnement' communaute.id 1%}">
+    <a href="{% url 'Modification abonnement' communaute.id 1%}">
         <button>S'abonner</button>
     </a>
     {% endif %}
+
+{% empty %}
+<p>Pas de communautés.</p>
 
 {% endfor %}
 
