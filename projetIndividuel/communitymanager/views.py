@@ -28,18 +28,6 @@ def communautes(request, communaute_id=0, choix=2):
     return render(request, 'communitymanager/communautes.html', locals())
 
 @login_required()
-def modifabonnement(request, communaute_id, choix):
-    communaute = Communaute.objects.get(id=communaute_id)
-    if choix == 0:
-        communaute.abonnes.remove(request.user)
-        communaute.abonnement = False
-    else:
-        communaute.abonnes.add(request.user)
-        communaute.abonnement = True
-    communautes = Communaute.objects.all()
-    return render(request, 'communitymanager/communautes.html', locals())
-
-@login_required()
 def communaute(request, communaute_id):
     communaute = Communaute.objects.get(id=communaute_id)
     posts = Post.objects.filter(communaute=communaute)
