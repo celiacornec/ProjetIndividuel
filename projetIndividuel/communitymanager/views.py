@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from .models import Communaute, Post
+
+from .forms import CommentForm, PostForm
+from .models import Communaute, Post, Commentaire
 
 
 # Create your views here.
@@ -32,3 +34,24 @@ def communaute(request, communaute_id):
     communaute = Communaute.objects.get(id=communaute_id)
     posts = Post.objects.filter(communaute=communaute)
     return render(request, 'communitymanager/communaute.html', locals())
+
+@login_required()
+def post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    communaute = post.communaute
+
+    form = CommentForm(request.POST or None)
+    if form.is_valid():
+        contenu_com = form.cleaned_data['commentaire']
+        commentaire = Commentaire.objects.create(contenu=contenu_com, post=post, auteur=request.user)
+
+    commentaires = Commentaire.objects.filter(post=post)
+
+    return render(request, 'communitymanager/post.html', locals())
+
+@login_required()
+def nouveau_post(request):
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        post = form.save()
+    return render(request, 'communitymanager/nouveaupost.html', locals())

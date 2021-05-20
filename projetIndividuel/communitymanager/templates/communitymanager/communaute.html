@@ -10,7 +10,7 @@
 
 {% for post in posts %}
 
-    <a href="{% url 'Affichage des posts' post.id %}">
+    <a href="{% url 'Visualisation post' post.id %}">
       {{post.titre}}
       </a>
 
@@ -18,6 +18,15 @@
 <p>Pas de posts.</p>
 
 {% endfor %}
+
+<a href="{% url 'Nouveau post' %}">
+    <button>Créer un nouveau post</button>
+</a>
+
+<br><br>
+<a href="{% url 'Liste des communautes' %}">
+    <button>Retour à la liste des communautés</button>
+</a>
 
 </body>
 </html>

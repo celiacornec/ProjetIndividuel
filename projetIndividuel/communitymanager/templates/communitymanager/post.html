@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affichage du post et de ses commentaires</title>
+</head>
+<body>
+
+<h1>{{post.titre}}</h1><h2>Par {{post.auteur}}</h2>
+<h3>Paru le {{post.date_creation}}</h3>
+<p>{{post.description}}</p>
+
+{% for commentaire in commentaires %}
+
+    <h3>Le {{commentaire.date_creation}}</h3><h4>par {{commentaire.auteur}}</h4>
+    <p>{{commentaire.contenu}}</p>
+
+{% empty %}
+<p>Pas de commentaires.</p>
+
+{% endfor %}
+
+<form action="{% url 'Visualisation post' post.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+<br><br>
+<a href="{% url 'Liste des posts' communaute.id %}">
+    <button>Retour à la liste des posts</button>
+</a>
+
+</body>
+</html>
