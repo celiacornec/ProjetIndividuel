@@ -61,3 +61,12 @@ def nouveau_post(request):
 # else:
   #      form = PostForm()
  #   return render(request, 'communitymanager/post.html', locals())
+
+@login_required()
+def modif_post(request):
+    form = PostForm
+
+@login_required()
+def allposts(request):
+    posts = Post.objects.all()
+    return render(request, 'communitymanager/posts.html', locals())
