@@ -51,7 +51,13 @@ def post(request, post_id):
 
 @login_required()
 def nouveau_post(request):
-    form = PostForm(request.POST or None)
-    if form.is_valid():
-        post = form.save()
-    return render(request, 'communitymanager/nouveaupost.html', locals())
+   # if request.method == 'POST':
+        form = PostForm(request.POST or None)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.auteur = request.user
+            post.save()
+        return render(request, 'communitymanager/nouveaupost.html', locals())
+# else:
+  #      form = PostForm()
+ #   return render(request, 'communitymanager/post.html', locals())

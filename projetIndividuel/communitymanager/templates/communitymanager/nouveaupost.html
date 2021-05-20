@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="{% url 'Liste des communautes' %}" method="post">
+<form action="{% url 'Nouveau post' %}" method="post">
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
