@@ -6,11 +6,17 @@
 </head>
 <body>
 
+<h2>Nouveau post :</h2>
+
 <form action="{% url 'Nouveau post' %}" method="post">
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
 </form>
+
+<a href="{% url 'Affichage de tous les posts' %}">
+    <button>Cancel</button>
+</a>
 
 </body>
 </html>

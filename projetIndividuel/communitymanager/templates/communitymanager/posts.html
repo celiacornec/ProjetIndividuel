@@ -8,17 +8,21 @@
 
 <h1>Voici la liste de tous les posts !</h1>
 
+<a href="{% url 'Nouveau post' %}">
+    <button>Créer un nouveau post</button>
+</a>
+
 {% for post in posts %}
 
     <h3><a href="{% url 'Visualisation post' post.id %}">
         {{post.titre}}</a></h3>
     <p> by
         <a href="{% url 'Liste des posts' post.communaute.id %}">
-        {{post.communaute}}</a> le {{post.date_creation}}
+        {{post.communaute}}</a>, le {{post.date_creation}}
     </p>
 
     {% if post.evenementiel %}
-        <p>Cet évènement se déroulera le {{post.date_evenement}}</p>
+        <p>Cet évènement se déroulera le {{post.date_evenement}}.</p>
 
     {% else %}
         <p>Ceci n'est pas un évènement.</p>

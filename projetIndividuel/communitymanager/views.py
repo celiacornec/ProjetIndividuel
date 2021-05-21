@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import CommentForm, PostForm
 from .models import Communaute, Post, Commentaire
@@ -51,16 +51,15 @@ def post(request, post_id):
 
 @login_required()
 def nouveau_post(request):
-   # if request.method == 'POST':
         form = PostForm(request.POST or None)
         if form.is_valid():
             post = form.save(commit=False)
             post.auteur = request.user
             post.save()
-        return render(request, 'communitymanager/nouveaupost.html', locals())
-# else:
-  #      form = PostForm()
- #   return render(request, 'communitymanager/post.html', locals())
+            post_id = post.id
+            return redirect('Visualisation post', post_id)
+        else:
+            return render(request, 'communitymanager/nouveaupost.html', locals())
 
 @login_required()
 def modif_post(request):
