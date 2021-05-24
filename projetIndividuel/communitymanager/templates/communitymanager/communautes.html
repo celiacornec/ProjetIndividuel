@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Liste des communautés</title>
 </head>
 <body>
+
+{% extends "base.html" %}
+{% block title %}Liste des communautés{% endblock %}
+{% block content %}
 
 <h1>Voici la liste des communautés !</h1>
 
@@ -30,6 +35,13 @@
 <p>Pas de communautés.</p>
 
 {% endfor %}
+
+<br><br>
+<a href="{% url 'Affichage de tous les posts' %}">
+    <button>Retour à la liste de tous les posts</button>
+</a>
+
+{% endblock %}
 
 </body>
 </html>

@@ -6,6 +6,10 @@
 </head>
 <body>
 
+{% extends "base.html" %}
+{% block title %}Posts d'une communauté{% endblock %}
+{% block content %}
+
 <h1>Posts de {{communaute.nom}}</h1>
 
 {% for post in posts %}
@@ -31,6 +35,8 @@
 <a href="{% url 'Affichage de tous les posts' %}">
     <button>Retour à la liste de tous les posts</button>
 </a>
+
+{% endblock %}
 
 </body>
 </html>

@@ -6,9 +6,13 @@
 </head>
 <body>
 
+{% extends "base.html" %}
+{% block title %}Visualisation d'un post{% endblock %}
+{% block content %}
+
 <h1>{{post.titre}}</h1>
-<h3>Pour <a href="{% url 'Liste des posts' communaute.id %}">
-    {{post.communaute}}</a> par {{post.auteur}}, le {{post.date_creation}}</h3>
+<h3>Par {{post.auteur}} pour <a href="{% url 'Liste des posts' communaute.id %}">
+    {{post.communaute}}</a>, le {{post.date_creation}}</h3>
 <p>{{post.description}}</p>
 
 {% if post.evenementiel %}
@@ -40,6 +44,8 @@
 <a href="{% url 'Affichage de tous les posts' %}">
     <button>Retour à la liste de tous les posts</button>
 </a>
+
+{% endblock %}
 
 </body>
 </html>

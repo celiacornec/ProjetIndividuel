@@ -6,6 +6,10 @@
 </head>
 <body>
 
+{% extends "base.html" %}
+{% block title %}Liste de tous les posts{% endblock %}
+{% block content %}
+
 <h1>Voici la liste de tous les posts !</h1>
 
 <a href="{% url 'Nouveau post' %}">
@@ -33,6 +37,8 @@
 <p>Pas de posts.</p>
 
 {% endfor %}
+
+{% endblock %}
 
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+   <title>{% block title %}Site de clubs{% endblock %}</title>
+</head>
+<body>
+<header>In da Club</header>
+    <nav>
+       {% block nav %}
+       <ul>
+            <li><a href="{% url 'Liste des communautes' %}">Communautés</a></li>
+            <li><a href="{% url 'Affichage de tous les posts' %}">News Feed</a></li>
+            <li><a href="{% url 'Nouveau post' %}">Nouveau post</a></li>
+            <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+
+</ul>
+       {% endblock %}
+   </nav>
+   <section id="content">
+       {% block content %}{% endblock %}
+   </section>
+
+<footer>{% block footer %}&copy; ISAE-Supaero{% endblock %}</footer>
+</body>
+</html>

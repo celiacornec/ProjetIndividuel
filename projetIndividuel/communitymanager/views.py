@@ -62,8 +62,9 @@ def nouveau_post(request):
             return render(request, 'communitymanager/nouveaupost.html', locals())
 
 @login_required()
-def modif_post(request):
-    form = PostForm
+def modif_post(request, post_id):
+    postmodif = Post.objects.get(id=post_id)
+    form = PostForm(instance=postmodif)
 
 @login_required()
 def allposts(request):
