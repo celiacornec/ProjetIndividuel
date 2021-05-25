@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.utils import timezone
 
 from .forms import CommentForm, PostForm
 from .models import Communaute, Post, Commentaire
@@ -32,7 +33,7 @@ def communautes(request, communaute_id=0, choix=2):
 @login_required()
 def communaute(request, communaute_id):
     communaute = Communaute.objects.get(id=communaute_id)
-    posts = Post.objects.filter(communaute=communaute)
+    posts = Post.objects.filter(communaute=communaute).order_by('-date_creation')
     return render(request, 'communitymanager/communaute.html', locals())
 
 @login_required()
@@ -55,6 +56,7 @@ def nouveau_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.auteur = request.user
+            post.date_creation = timezone.now()
             post.save()
             post_id = post.id
             return redirect('Visualisation post', post_id)

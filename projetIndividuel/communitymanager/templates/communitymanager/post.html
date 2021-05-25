@@ -1,14 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Affichage du post et de ses commentaires</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-{% extends "base.html" %}
 {% block title %}Visualisation d'un post{% endblock %}
 {% block content %}
+
+<br>
+<br>
+
+<a href="{% url 'Modification post' post.id %}">
+    <button>Modifier ce post</button>
+</a>
+<a href="{% url 'Liste des posts' communaute.id %}">
+    <button>Retour à la liste des posts de la communauté</button>
+</a>
 
 {% if droitmodif == 0 %}
         <p style="color:red;">Vous n'êtes pas l'auteur de ce post, vous ne pouvez pas le modifier.</p>
@@ -23,11 +35,15 @@
         <p>Date de l'évènement : {{post.date_evenement}}.</p>
     {% endif %}
 
-<a href="{% url 'Modification post' post.id %}">
-    <button>Modifier ce post</button>
-</a>
+<p>Priorité de ce post : {{post.priorite}} <div id="cercle"></div></p>
 
 <h3>Commentaires :</h3>
+
+<form action="{% url 'Visualisation post' post.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
 
 {% for commentaire in commentaires %}
 
@@ -38,18 +54,6 @@
 <p>Pas de commentaires.</p>
 
 {% endfor %}
-
-<form action="{% url 'Visualisation post' post.id %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
-
-<br><br>
-<a href="{% url 'Liste des posts' communaute.id %}">
-    <button>Retour à la liste des posts de la communauté</button>
-</a>
-<br>
 
 {% endblock %}
 
