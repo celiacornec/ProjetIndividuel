@@ -10,14 +10,22 @@
 {% block title %}Visualisation d'un post{% endblock %}
 {% block content %}
 
+{% if droitmodif == False %}
+        <p color="red">Vous n'êtes pas l'auteur de ce post, vous ne pouvez pas le modifier.</p>
+    {% endif %}
+
 <h1>{{post.titre}}</h1>
-<h3>Par {{post.auteur}} pour <a href="{% url 'Liste des posts' communaute.id %}">
+<h3>Par {{post.auteur}} pour <a href="{% url 'Liste des posts' post.communaute.id %}">
     {{post.communaute}}</a>, le {{post.date_creation}}</h3>
 <p>{{post.description}}</p>
 
 {% if post.evenementiel %}
-        <p>Cet évènement se déroulera le {{post.date_evenement}}.</p>
+        <p>Date de l'évènement : {{post.date_evenement}}.</p>
     {% endif %}
+
+<a href="{% url 'Modification post' post.id %}">
+    <button>Modifier ce post</button>
+</a>
 
 <h3>Commentaires :</h3>
 
@@ -40,9 +48,6 @@
 <br><br>
 <a href="{% url 'Liste des posts' communaute.id %}">
     <button>Retour à la liste des posts de la communauté</button>
-</a>
-<a href="{% url 'Affichage de tous les posts' %}">
-    <button>Retour à la liste de tous les posts</button>
 </a>
 
 {% endblock %}

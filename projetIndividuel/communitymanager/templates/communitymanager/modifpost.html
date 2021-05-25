@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends "base.html" %}
+{% block title %}Nouveau post{% endblock %}
+{% block content %}
+
+<h2>Nouveau post :</h2>
+
+<form action="{% url 'Modification post' post.id %}" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+
+<a href="{% url 'Visualisation post' post.id %}">
+    <button>Cancel</button>
+</a>
+
+{% endblock %}
+
+</body>
+</html>

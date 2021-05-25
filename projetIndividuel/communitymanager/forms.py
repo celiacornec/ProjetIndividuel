@@ -11,6 +11,3 @@ class PostForm(forms.ModelForm):
         model = Post
         exclude = ('auteur',)
 
-    def __init__(self, *args, **kwargs):
-        super(PostForm, self).__init__(*args, **kwargs)
-        self.fields['assignee'].queryset = self.instance.project.members

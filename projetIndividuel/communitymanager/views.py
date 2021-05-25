@@ -63,8 +63,22 @@ def nouveau_post(request):
 
 @login_required()
 def modif_post(request, post_id):
-    postmodif = Post.objects.get(id=post_id)
-    form = PostForm(instance=postmodif)
+    post = Post.objects.get(id=post_id)
+
+    if request.user == post.auteur:
+        if request.method == 'POST':
+            form = PostForm(request.POST or None, instance=post)
+            if form.is_valid():
+                form.save()
+                return redirect('Visualisation post', post_id)
+            else:
+                return redirect('Liste des communautes')
+        else:
+            form = PostForm(instance=post)
+            return render(request, 'communitymanager/modifpost.html', locals())
+    else:
+        droitmodif = False
+        return render(request, 'communitymanager/post.html', locals())
 
 @login_required()
 def allposts(request):

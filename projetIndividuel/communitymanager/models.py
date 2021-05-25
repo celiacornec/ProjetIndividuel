@@ -33,7 +33,7 @@ class Post(models.Model):
     communaute = models.ForeignKey(Communaute, on_delete=models.CASCADE)
     priorite = models.ForeignKey(Priorite, on_delete=models.CASCADE, null=True)
     evenementiel = models.BooleanField(default=False)
-    date_evenement = models.DateField(null=True)
+    date_evenement = models.DateField(null=True, default=None, blank=True)
     auteur = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
