@@ -10,8 +10,8 @@
 {% block title %}Visualisation d'un post{% endblock %}
 {% block content %}
 
-{% if droitmodif == False %}
-        <p color="red">Vous n'êtes pas l'auteur de ce post, vous ne pouvez pas le modifier.</p>
+{% if droitmodif == 0 %}
+        <p style="color:red;">Vous n'êtes pas l'auteur de ce post, vous ne pouvez pas le modifier.</p>
     {% endif %}
 
 <h1>{{post.titre}}</h1>
@@ -49,6 +49,7 @@
 <a href="{% url 'Liste des posts' communaute.id %}">
     <button>Retour à la liste des posts de la communauté</button>
 </a>
+<br>
 
 {% endblock %}
 

@@ -8,5 +8,6 @@ urlpatterns = [
     path('post/<int:post_id>', views.post, name='Visualisation post'),
     path('nouveaupost/', views.nouveau_post, name="Nouveau post"),
     path('modifpost/<int:post_id>', views.modif_post, name="Modification post"),
+    path('post/<int:post_id>/<int:droitmodif>', views.post, name='Refus modif post'),
     path('posts', views.allposts, name="Affichage de tous les posts"),
 ]

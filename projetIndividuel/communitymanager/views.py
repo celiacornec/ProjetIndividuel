@@ -36,7 +36,7 @@ def communaute(request, communaute_id):
     return render(request, 'communitymanager/communaute.html', locals())
 
 @login_required()
-def post(request, post_id):
+def post(request, post_id, droitmodif=1):
     post = Post.objects.get(id=post_id)
     communaute = post.communaute
 
@@ -66,6 +66,7 @@ def modif_post(request, post_id):
     post = Post.objects.get(id=post_id)
 
     if request.user == post.auteur:
+        droitmodif = 1
         if request.method == 'POST':
             form = PostForm(request.POST or None, instance=post)
             if form.is_valid():
@@ -77,10 +78,11 @@ def modif_post(request, post_id):
             form = PostForm(instance=post)
             return render(request, 'communitymanager/modifpost.html', locals())
     else:
-        droitmodif = False
-        return render(request, 'communitymanager/post.html', locals())
+        droitmodif = 0
+        return redirect('Refus modif post', post_id, droitmodif) ## a modifier
 
 @login_required()
 def allposts(request):
-    posts = Post.objects.all()
+    communautes = Communaute.objects.filter(abonnes=request.user)
+    posts = Post.objects.filter(communaute__in=communautes).order_by('-date_creation')
     return render(request, 'communitymanager/posts.html', locals())

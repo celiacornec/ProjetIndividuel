@@ -12,10 +12,6 @@
 
 <h1>Voici la liste de tous les posts !</h1>
 
-<a href="{% url 'Nouveau post' %}">
-    <button>Créer un nouveau post</button>
-</a>
-
 {% for post in posts %}
 
     <h3><a href="{% url 'Visualisation post' post.id %}">
