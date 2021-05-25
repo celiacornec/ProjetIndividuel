@@ -1,10 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+
+<header>In da club</header>
+
+<h1>Connexion</h1>
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}

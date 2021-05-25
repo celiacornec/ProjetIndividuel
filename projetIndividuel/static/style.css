@@ -1,3 +1,32 @@
+#nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: lightseagreen;
+    }
+    li {
+        float: left;
+        }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 19px
+    }
+    li a:hover {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+}
+
 #cercle {
     width: 40px;
     height: 40px;
@@ -23,5 +52,38 @@
   .column {
     width: 100%;
   }
+}
+
+header {
+    color: white;
+    background-color: lightgrey;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 30px 16px;
+    text-decoration: overline;
+    font-size: 60px;
+    }
+
+h1 {
+    color: white;
+    background-color: aquamarine;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 20px 16px;
+    font-size: 40px;
+}
+
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+
+h2 {
+    color: white;
+    background-color: lightseagreen;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 14px 16px;
+    font-size: 19px;
 }
 

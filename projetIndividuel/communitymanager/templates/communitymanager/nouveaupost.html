@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 
 {% block title %}Nouveau post{% endblock %}
 {% block content %}
 
-<h2>Nouveau post :</h2>
+<h1>Nouveau post</h1>
 
 <form action="{% url 'Nouveau post' %}" method="post">
 {% csrf_token %}

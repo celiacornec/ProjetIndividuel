@@ -6,32 +6,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des communautés</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 
 {% block title %}Liste des communautés{% endblock %}
 {% block content %}
 
-<h1>Voici la liste des communautés !</h1>
+<h1>Communautés</h1>
 
 {% for communaute in communautes %}
 
+<div class="row">
+  <div class="column">
     <h3><a href="{% url 'Liste des posts' communaute.id %}">
         {{communaute.nom}}</a></h3>
+  </div>
 
     {% if communaute.abonnement %}
-        Vous êtes abonné à cette communauté
-    <a href="{% url 'Modification abonnement' communaute.id 0%}">
+        <div class="column">Vous êtes abonné à cette communauté</div>
+
+    <div class="column"><a href="{% url 'Modification abonnement' communaute.id 0%}">
         <button>Se désabonner</button>
-    </a>
+    </a></div>
 
     {% else %}
-        Vous n'êtes pas abonné à cette communauté
-    <a href="{% url 'Modification abonnement' communaute.id 1%}">
+        <div class="column">Vous n'êtes pas abonné à cette communauté</div>
+    <div class="column"><a href="{% url 'Modification abonnement' communaute.id 1%}">
         <button>S'abonner</button>
-    </a>
+    </a></div>
     {% endif %}
+    </div>
 
 {% empty %}
 <p>Pas de communautés.</p>

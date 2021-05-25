@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
    <title>{% block title %}Site de clubs{% endblock %}</title>
 </head>
-
+<link rel="stylesheet" href="{% static 'style.css' %}">
 <style>
     ul {
         list-style-type: none;
@@ -20,6 +21,7 @@
         padding: 14px 16px;
         text-decoration: none;
         font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 19px
     }
     li a:hover {
         background-color: #111;
@@ -28,21 +30,12 @@
     .active {
         background-color: #4CAF50;
     }
-
-    header {
-        color: white;
-        background-color: aquamarine;
-        text-align: center;
-        font-family: "Lucida Console", "Courier New", monospace;
-        padding: 30px 16px;
-        text-decoration: overline;
-        font-size: 60px;
-    }
 </style>
 <body>
 
-<header>IN DA CLUB</header>
+<header>In da club</header>
 
+<div id="nav">
 <nav>
        {% block nav %}
        <ul>
@@ -54,11 +47,16 @@
 </ul>
        {% endblock %}
    </nav>
+    </div>
+
    <section id="content">
        {% block content %}{% endblock %}
    </section>
 
 <br>
-<footer>{% block footer %}&copy; ISAE-Supaero{% endblock %}</footer>
+<footer>
+    {% block footer %}
+    <h2>&copy; ISAE-Supaero</h2>
+    {% endblock %}</footer>
 </body>
 </html>
