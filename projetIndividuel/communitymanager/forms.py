@@ -10,7 +10,8 @@ formulaires d'ajout d'un post et d'ajout d'un commentaire."""
 class CommentForm(forms.Form):
     commentaire = forms.CharField(required=False, label='Ajouter un commentaire')
 
-"""Formulaire permettant à un utilisateur de créer un post et de le modifier."""
+"""Formulaire permettant à un utilisateur de créer un post et de le modifier.
+Ce formulaire est créé à partir du modèle Post."""
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post

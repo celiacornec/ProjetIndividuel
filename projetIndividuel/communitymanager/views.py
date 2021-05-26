@@ -27,6 +27,7 @@ def communautes(request, communaute_id=0, choix=2):
         communaute_modif = Communaute.objects.get(id=communaute_id)
         communaute_modif.abonnes.add(request.user)
 
+    #Création d'une variable pour savoir si un utilisateur fait partie des abonnés d'une communauté
     for communaute in communautes:
         if user in communaute.abonnes.all():
             communaute.abonnement = True
@@ -103,7 +104,7 @@ def modif_post(request, post_id):
 
 
 """"Permet l'affichage des posts correspondant aux communautés auxquelles 
-l'utilisateur est abonné"""
+l'utilisateur est abonné, par ordre antéchronologique"""
 @login_required()
 def allposts(request):
     communautes = Communaute.objects.filter(abonnes=request.user)

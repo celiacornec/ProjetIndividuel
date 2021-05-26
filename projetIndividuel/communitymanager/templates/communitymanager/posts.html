@@ -1,3 +1,6 @@
+<!-- Template permettant d'afficher les posts des communautés
+ auxquelles l'utilisateur est abonné (News Feed)-->
+
 {% extends "base.html" %}
 {% load static %}
 <!DOCTYPE html>
@@ -9,12 +12,13 @@
 </head>
 <body>
 
-{% block title %}Liste de tous les posts{% endblock %}
+{% block title %}News Feed{% endblock %}
 {% block content %}
 
 <h1>News feed</h1>
 
 {% for post in posts %}
+
 <div class="row">
     <div class="column">
         <h3><a href="{% url 'Visualisation post' post.id %}" , class="button3">
@@ -33,6 +37,9 @@
     </div>
 
     <div class="column">
+        <!-- Affichage d'un cercle de couleur selon la priorité du post. Ne fonctionne qu'avec
+        des priorités ayant des labels correspondant à des noms de couleur en anglais
+        (white,yellow,orange,tomato,red dans ma base de données).-->
         <div id="cercle" style="background-color: {{post.priorite}}"></div>
     </div>
 </div>

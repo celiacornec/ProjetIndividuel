@@ -1,7 +1,7 @@
 from django.urls import path
 from .import views
 
-""""Ce fichier recense tous les chemins, ou urls, permettant d'accéder aux vues créées."""
+""""Ce fichier recense tous les chemins, ou urls, permettant d'accéder aux vues créées pour l'application."""
 
 urlpatterns = [
     path('communautes', views.communautes, name='Liste des communautes'),

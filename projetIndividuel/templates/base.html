@@ -1,3 +1,6 @@
+<!-- Template de base qui permet l'utilisation de blocs dans les
+différents templates du projet, notamment du bloc navigation -->
+
 {% load static %}
 <!DOCTYPE html>
    <title>{% block title %}Site de clubs{% endblock %}</title>
@@ -14,7 +17,6 @@
             <li><a href="{% url 'Affichage de tous les posts' %}">News Feed</a></li>
             <li><a href="{% url 'Nouveau post' %}">Nouveau post</a></li>
             <li><a href="{% url 'logout' %}">Déconnexion</a></li>
-
 </ul>
        {% endblock %}
    </nav>

@@ -1,4 +1,8 @@
-/* Pour configurer le menu de navigation */
+/* Fichier CSS regroupant la mise en forme utilisée
+ dans les templates de l'application et du projet.*/
+
+/* Configuration du menu de navigation */
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -25,7 +29,8 @@ li a:hover {
     background-color: #111;
 }
 
-/* Configuration du cercle de priorité d'un post */
+/* Configuration des cercles de priorité d'un post */
+
 #cercle {
     width: 25px;
     height: 25px;
@@ -41,7 +46,8 @@ li a:hover {
     border-color: lightgrey;
 }
 
-/* Configurer la disposition d'une page en colonnes */
+/* Configuration de la disposition d'une page en 3 colonnes.*/
+
 .column {
   float: left;
   width: 33.33%;
@@ -53,13 +59,16 @@ li a:hover {
   clear: both;
 }
 
+/* Responsive design */
+
 @media screen and (max-width:600px) {
   .column {
     width: 100%;
   }
 }
 
-/*  */
+/* Configuration de la mise en forme des textes et divisions */
+
 header {
     color: white;
     background-color: lightgrey;
@@ -117,8 +126,15 @@ h5 {
     font-weight: lighter;
 }
 
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+    position: center;
+}
 
-/* Configurer la présentation des formulaires */
+/* Configuration de la présentation des formulaires */
+
 input[type=text], select {
   width: 100%;
   padding: 12px 20px;
@@ -147,12 +163,7 @@ input[type=submit]:hover {
     color: white;
 }
 
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-    position: center;
-}
+/* Configuration de la mise en forme des boutons */
 
 .button {
   background-color: lightseagreen;

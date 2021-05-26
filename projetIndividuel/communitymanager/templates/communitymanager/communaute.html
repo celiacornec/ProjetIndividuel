@@ -1,3 +1,5 @@
+<!-- Template permettant d'afficher les posts d'une communauté -->
+
 {% extends "base.html" %}
 {% load static %}
 <!DOCTYPE html>
@@ -28,11 +30,13 @@
     </div>
 
     <div class="column">
-        <p> par {{post.auteur}}, le {{post.date_creation}}
-        <p>
+        <p> par {{post.auteur}}, le {{post.date_creation}}</p>
     </div>
 
     <div class="column">
+        <!-- Affichage d'un cercle de couleur selon la priorité du post. Ne fonctionne qu'avec
+         des priorités ayant des labels correspondant à des noms de couleur en anglais
+         (white,yellow,orange,tomato,red dans ma base de données).-->
         <div id="cercle" style="background-color: {{post.priorite}}"></div>
     </div>
 </div>
