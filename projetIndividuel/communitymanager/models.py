@@ -35,7 +35,7 @@ qui se déroule à une certaine date. Il est lié à une certaine communauté et
 class Post(models.Model):
     titre = models.CharField(max_length=200)
     description = models.TextField(null=True)
-    date_creation = models.DateField(default=timezone.now, verbose_name="Date de création")
+    date_creation = models.DateTimeField(default=timezone.now, verbose_name="Date de création")
     communaute = models.ForeignKey(Communaute, on_delete=models.CASCADE)
     priorite = models.ForeignKey(Priorite, on_delete=models.CASCADE, null=True)
     evenementiel = models.BooleanField(default=False)
@@ -52,7 +52,7 @@ class Post(models.Model):
 """"Un commentaire possède une date de création, un contenu et un auteur. Il est lié 
 à un certain post."""
 class Commentaire(models.Model):
-    date_creation = models.DateField(default=timezone.now)
+    date_creation = models.DateTimeField(default=timezone.now)
     contenu = models.TextField()
     auteur = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
