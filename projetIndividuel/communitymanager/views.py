@@ -13,6 +13,9 @@ def communautes(request, communaute_id=0, choix=2):
     communautes = Communaute.objects.all()
     user = request.user
 
+    for communaute in communautes:
+        communaute.nb_posts = Post.objects.filter(communaute=communaute).count()
+
     if choix == 0:
         communaute_modif = Communaute.objects.get(id=communaute_id)
         communaute_modif.abonnes.remove(request.user)
@@ -81,7 +84,7 @@ def modif_post(request, post_id):
             return render(request, 'communitymanager/modifpost.html', locals())
     else:
         droitmodif = 0
-        return redirect('Refus modif post', post_id, droitmodif) ## a modifier
+        return redirect('Refus modif post', post_id, droitmodif)
 
 @login_required()
 def allposts(request):
