@@ -17,21 +17,24 @@
 {% for post in posts %}
 
 <div class="row">
-  <div class="column">
-    <a href="{% url 'Visualisation post' post.id %}" class="button3">
-      {{post.titre}}
-      </a>
-    <br>
-  </div>
-
     <div class="column">
-    <p> par {{post.auteur}}, le {{post.date_creation}}<p>
+        <a href="{% url 'Visualisation post' post.id %}" class="button3">
+            {{post.titre}}
+        </a>
+
+        {% if post.evenementiel %}
+        <p>Date de l'évènement : {{post.date_evenement}}.</p>
+        {% endif %}
     </div>
 
     <div class="column">
-    <p> {{post.priorite}}<p>
+        <p> par {{post.auteur}}, le {{post.date_creation}}
+        <p>
     </div>
 
+    <div class="column">
+        <div id="cercle" style="background-color: {{post.priorite}}"></div>
+    </div>
 </div>
 
 {% empty %}

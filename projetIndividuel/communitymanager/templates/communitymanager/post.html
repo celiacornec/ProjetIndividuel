@@ -15,41 +15,49 @@
 <h1>{{post.titre}}</h1>
 
 {% if droitmodif == 0 %}
-        <p style="color:red;">Vous n'êtes pas l'auteur de ce post, vous ne pouvez pas le modifier.</p>
-    {% endif %}
+<p style="color:red;">Vous n'êtes pas l'auteur de ce post, vous ne pouvez pas le modifier.</p>
+{% endif %}
 
-<a href="{% url 'Modification post' post.id %}" class="button">Modifier ce post</a>
-<a href="{% url 'Liste des posts' communaute.id %}" class="button"> Retour à la liste des posts de la communauté</a>
+<p>Par {{post.auteur}} pour <a href="{% url 'Liste des posts' post.communaute.id %}" class="button2">
+    {{post.communaute}}</a>, le {{post.date_creation}}</p>
 
-<h3>Par {{post.auteur}} pour <a href="{% url 'Liste des posts' post.communaute.id %}">
-    {{post.communaute}}</a>, le {{post.date_creation}}</h3>
-<p>{{post.description}}</p>
+<div>
+    <p>{{post.description}}</p>
+</div>
+<br>
 
 {% if post.evenementiel %}
-        <p>Date de l'évènement : {{post.date_evenement}}.</p>
-    {% endif %}
+<p>Date de l'évènement : {{post.date_evenement}}.</p>
+{% endif %}
 
-<p>Priorité de ce post : {{post.priorite}} <div id="cercle" style="background-color: {{post.priorite}}"></div></p>
+<p>Priorité de ce post :
+<div id="cercle2" style="background-color: {{post.priorite}}"></div>
+</p>
 
-<h3>Commentaires :</h3>
+<h4>Commentaires</h4>
 
-{% for commentaire in commentaires %}
+<div>
+    {% for commentaire in commentaires %}
 
-    <h4>Le {{commentaire.date_creation}}, par {{commentaire.auteur}}</h4>
+    <h5>Le {{commentaire.date_creation}}, par {{commentaire.auteur}}</h5>
     <p>{{commentaire.contenu}}</p>
+    <hr/>
 
-{% empty %}
-<p>Pas de commentaires.</p>
+    {% empty %}
+    <p>Pas de commentaires.</p>
 
-{% endfor %}
-
-<br><br>
+    {% endfor %}
+</div>
 
 <form action="{% url 'Visualisation post' post.id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
 </form>
+
+<br><br>
+<a href="{% url 'Modification post' post.id %}" class="button">Modifier ce post</a>
+<a href="{% url 'Liste des posts' communaute.id %}" class="button"> Retour à la liste des posts de la communauté</a>
 
 {% endblock %}
 

@@ -25,11 +25,20 @@ li a:hover {
     background-color: #111;
 }
 
-/* Tentative de configuration du cercle de priorité d'un post */
+/* Configuration du cercle de priorité d'un post */
 #cercle {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 40px;
+}
+
+#cercle2 {
+    width: 2px;
+    height: 2px;
+    border-radius: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
 }
 
 /* Configurer la disposition d'une page en colonnes */
@@ -61,6 +70,10 @@ header {
     font-size: 60px;
     }
 
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
 h1 {
     color: white;
     background-color: aquamarine;
@@ -70,14 +83,9 @@ h1 {
     font-size: 40px;
 }
 
-body {
-    font-family: "Lucida Console", "Courier New", monospace;
-
-}
-
 h2 {
     color: white;
-    background-color: lightseagreen;
+    background-color: aquamarine;
     text-align: center;
     font-family: "Lucida Console", "Courier New", monospace;
     padding: 14px 16px;
@@ -90,13 +98,25 @@ h3 {
     font-weight: bold;
 }
 
-:root {
-    --beige: beige;
-    --jaune: yellow;
-    --orange: orange;
-    --rouge: tomato;
-    --ecarlate: red;
+h4 {
+    color: white;
+    background-color: aquamarine;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 20px 16px;
+    font-size: 25px;
 }
+
+h5 {
+    color: white;
+    background-color: darkgrey;
+    /*text-align: center;*/
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 8px 12px;
+    font-size: 17px;
+    font-weight: lighter;
+}
+
 
 /* Configurer la présentation des formulaires */
 input[type=text], select {
@@ -135,9 +155,9 @@ div {
 }
 
 .button {
-  background-color: lightgrey;
+  background-color: lightseagreen;
   border: none;
-  color: black;
+  color: white;
   padding: 14px 20px;
   text-align: center;
   text-decoration: none;
@@ -176,7 +196,7 @@ div {
     background-color: lightseagreen;
     border: none;
     color: white;
-    padding: 14px 20px;
+    padding: 10px 12px;
     text-align: center;
     margin: 8px 0px;
     border-radius: 4px;
@@ -214,7 +234,7 @@ div {
 }
 
 .button4 {
-    width: 100%;
+    width: 97%;
     background-color: white;
     border: none;
     color: black;
@@ -227,7 +247,6 @@ div {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    position: center;
 }
 
 .button4:hover {

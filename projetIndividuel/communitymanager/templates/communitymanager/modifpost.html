@@ -15,9 +15,9 @@
 <h1>Modification du post</h1>
 
 <form action="{% url 'Modification post' post.id %}" method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Submit" />
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit"/>
 </form>
 
 <a href="{% url 'Visualisation post' post.id %}" class="button1">Cancel </a>

@@ -16,27 +16,29 @@
 
 {% for post in posts %}
 <div class="row">
-  <div class="column">
-    <h3><a href="{% url 'Visualisation post' post.id %}", class="button3">
-        {{post.titre}}</a></h3>
-  </div>
-
     <div class="column">
-    <p>         par
-        <a href="{% url 'Liste des posts' post.communaute.id %}", class="button2">
-        {{post.communaute}}</a> le {{post.date_creation}}<p>
+        <h3><a href="{% url 'Visualisation post' post.id %}" , class="button3">
+            {{post.titre}}</a></h3>
+
+        {% if post.evenementiel %}
+        <p>Date de l'évènement : {{post.date_evenement}}.</p>
+        {% endif %}
     </div>
 
     <div class="column">
-    {% if post.evenementiel %}
-        <p>Date de l'évènement : {{post.date_evenement}}.</p>
+        <p> par
+            <a href="{% url 'Liste des posts' post.communaute.id %}" , class="button2">
+                {{post.communaute}}</a> le {{post.date_creation}}
+        <p>
+    </div>
 
-    {% endif %}
+    <div class="column">
+        <div id="cercle" style="background-color: {{post.priorite}}"></div>
     </div>
 </div>
 
 {% empty %}
-<p>Vous n'êtes abonné à aucune communauté.</p>
+<p>Pas de posts pour le moment.</p>
 
 {% endfor %}
 

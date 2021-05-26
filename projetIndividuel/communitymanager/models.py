@@ -16,9 +16,9 @@ class Communaute(models.Model):
     def __str__(self):
         return self.nom
 
+
 class Priorite(models.Model):
     label = models.CharField(max_length=200)
-    #code_couleur = models.CharField(max_length=200)
 
     class Meta:
         verbose_name = "priorite"
@@ -26,6 +26,7 @@ class Priorite(models.Model):
 
     def __str__(self):
         return self.label
+
 
 class Post(models.Model):
     titre = models.CharField(max_length=200)
@@ -43,6 +44,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titre
+
 
 class Commentaire(models.Model):
     date_creation = models.DateField(default=timezone.now)
