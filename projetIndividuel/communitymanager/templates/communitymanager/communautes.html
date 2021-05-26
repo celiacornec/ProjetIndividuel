@@ -15,20 +15,17 @@
 
 <h1>Communautés</h1>
 
+<div>
 {% for communaute in communautes %}
 
-<div class="row">
-  <div class="column">
-    <h3><a href="{% url 'Liste des posts' communaute.id %}">
+
+    <h3><a href="{% url 'Liste des posts' communaute.id %}" class="button3">
         {{communaute.nom}}</a></h3>
-  </div>
 
-    <div class="column"><p>{{communaute.nb_posts}} post(s)</p>
-        </div>
+    <p>{{communaute.nb_posts}} post(s)</p>
 
-    <div class="column">
     {% if communaute.abonnement %}
-    <a href="{% url 'Modification abonnement' communaute.id 0%}" class="button2">
+    <a href="{% url 'Modification abonnement' communaute.id 0%}" class="button2" style="position:center">
         Se désabonner</a>
 
     {% else %}
@@ -36,13 +33,13 @@
     <a href="{% url 'Modification abonnement' communaute.id 1%}" class="button2">
         S'abonner</a>
     {% endif %}
-    </div>
-</div>
+
 
 {% empty %}
 <p>Pas de communautés.</p>
 
 {% endfor %}
+</div>
 
 {% endblock %}
 

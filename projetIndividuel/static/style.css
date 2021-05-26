@@ -133,6 +133,7 @@ div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+    position: center;
 }
 
 .button {
@@ -188,6 +189,28 @@ div {
 }
 
 .button2:hover {
+  background-color: black;
+    color: white;
+}
+
+.button3 {
+    width: 100%;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 20px 20px;
+    text-align: center;
+    margin: 8px 0px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: center;
+}
+
+.button3:hover {
   background-color: black;
     color: white;
 }

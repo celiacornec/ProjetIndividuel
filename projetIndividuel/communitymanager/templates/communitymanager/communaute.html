@@ -16,10 +16,23 @@
 
 {% for post in posts %}
 
-    <a href="{% url 'Visualisation post' post.id %}">
+<div class="row">
+  <div class="column">
+    <a href="{% url 'Visualisation post' post.id %}" class="button3">
       {{post.titre}}
       </a>
-    <br><br>
+    <br>
+  </div>
+
+    <div class="column">
+    <p> par {{post.auteur}}, le {{post.date_creation}}<p>
+    </div>
+
+    <div class="column">
+    <p> {{post.priorite}}<p>
+    </div>
+
+</div>
 
 {% empty %}
 <p>Pas de posts.</p>
