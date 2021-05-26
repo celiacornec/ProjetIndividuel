@@ -1,6 +1,8 @@
 from django.urls import path
 from .import views
 
+""""Ce fichier recense tous les chemins, ou urls, permettant d'accéder aux vues créées."""
+
 urlpatterns = [
     path('communautes', views.communautes, name='Liste des communautes'),
     path('communautes/<int:communaute_id>/<int:choix>', views.communautes, name='Modification abonnement'),

@@ -17,7 +17,6 @@
 <form action="{% url 'Nouveau post' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="date" name="date"/>
     <input type="submit" value="Submit"/>
 </form>
 

@@ -1,8 +1,7 @@
 from django.contrib import admin
 from .models import Communaute, Priorite, Post, Commentaire
 
-# Register your models here.
-
+"""Enregistrement des modèles à prendre en compte par l'administration"""
 admin.site.register(Communaute)
 admin.site.register(Priorite)
 admin.site.register(Post)
