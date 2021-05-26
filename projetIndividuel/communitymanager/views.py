@@ -78,7 +78,7 @@ def modif_post(request, post_id):
                 form.save()
                 return redirect('Visualisation post', post_id)
             else:
-                return redirect('Liste des communautes')
+                return render(request, 'communitymanager/modifpost.html', locals())
         else:
             form = PostForm(instance=post)
             return render(request, 'communitymanager/modifpost.html', locals())

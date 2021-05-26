@@ -11,3 +11,13 @@ class PostForm(forms.ModelForm):
         model = Post
         exclude = ('auteur','date_creation',)
 
+    def clean(self):
+        cleaned_data = super(PostForm, self).clean()
+        evenementiel = cleaned_data['evenementiel']
+        date_evenement = cleaned_data['date_evenement']
+
+        if (evenementiel and date_evenement == None):
+            raise forms.ValidationError('Vous devez choisir une date pour votre évènement.')
+        elif (not evenementiel and date_evenement != None):
+            raise forms.ValidationError('Vous n\'avez pas coché la case "Evènement.')
+        return cleaned_data

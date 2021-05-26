@@ -18,6 +18,7 @@ class Communaute(models.Model):
 
 class Priorite(models.Model):
     label = models.CharField(max_length=200)
+    #code_couleur = models.CharField(max_length=200)
 
     class Meta:
         verbose_name = "priorite"
