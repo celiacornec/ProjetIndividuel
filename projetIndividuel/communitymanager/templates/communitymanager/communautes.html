@@ -23,30 +23,25 @@
         {{communaute.nom}}</a></h3>
   </div>
 
+    <div class="column">
     {% if communaute.abonnement %}
-        <div class="column">Vous êtes abonné à cette communauté</div>
-
-    <div class="column"><a href="{% url 'Modification abonnement' communaute.id 0%}">
+    <a href="{% url 'Modification abonnement' communaute.id 0%}">
         <button>Se désabonner</button>
-    </a></div>
+    </a>
 
     {% else %}
-        <div class="column">Vous n'êtes pas abonné à cette communauté</div>
-    <div class="column"><a href="{% url 'Modification abonnement' communaute.id 1%}">
+
+    <a href="{% url 'Modification abonnement' communaute.id 1%}">
         <button>S'abonner</button>
-    </a></div>
+    </a>
     {% endif %}
     </div>
+</div>
 
 {% empty %}
 <p>Pas de communautés.</p>
 
 {% endfor %}
-
-<br><br>
-<a href="{% url 'Affichage de tous les posts' %}">
-    <button>Retour à la liste de tous les posts</button>
-</a>
 
 {% endblock %}
 

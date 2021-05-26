@@ -20,24 +20,20 @@
     <h3><a href="{% url 'Visualisation post' post.id %}">
         {{post.titre}}</a></h3>
   </div>
+
     <div class="column">
     <p> by
         <a href="{% url 'Liste des posts' post.communaute.id %}">
-        {{post.communaute}}</a>
+        {{post.communaute}}</a>, le {{post.date_creation}}<p>
     </div>
+
     <div class="column">
-    <p>le {{post.date_creation}}
-    </p>
-    </div>
-</div>
-
     {% if post.evenementiel %}
-        <p>Cet évènement se déroulera le {{post.date_evenement}}.</p>
-
-    {% else %}
-        <p>Ceci n'est pas un évènement.</p>
+        <p>Date de l'évènement : {{post.date_evenement}}.</p>
 
     {% endif %}
+    </div>
+</div>
 
 {% empty %}
 <p>Vous n'êtes abonné à aucune communauté.</p>

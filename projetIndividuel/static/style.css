@@ -1,39 +1,41 @@
-#nav {
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: lightseagreen;
-    }
-    li {
-        float: left;
-        }
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 19px
-    }
-    li a:hover {
-        background-color: #111;
-    }
-
-    .active {
-        background-color: #4CAF50;
-    }
+/* Pour configurer le menu de navigation */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightseagreen;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 19px
+}
+li a:hover {
+    background-color: #111;
 }
 
+.active {
+    background-color: #4CAF50;
+}
+
+/* Tentative de configuration du cercle de priorité d'un post */
 #cercle {
     width: 40px;
     height: 40px;
     border-radius: 20px;
+    border-color: #111111;
     background: red;
 }
 
+/* Configurer la disposition d'une page en colonnes */
 .column {
   float: left;
   width: 33.33%;
@@ -54,6 +56,7 @@
   }
 }
 
+/*  */
 header {
     color: white;
     background-color: lightgrey;
@@ -87,3 +90,51 @@ h2 {
     font-size: 19px;
 }
 
+h3 {
+    color: black;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bold;
+}
+
+:root {
+    --beige: beige;
+    --jaune: yellow;
+    --orange: orange;
+    --rouge: tomato;
+    --ecarlate: red;
+}
+
+/* Configurer la présentation des formulaires */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: lightgrey;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 15px;
+}
+
+input[type=submit]:hover {
+  background-color: black;
+    color: white;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
