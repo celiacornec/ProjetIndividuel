@@ -1,0 +1,265 @@
+- model: communitymanager.communaute
+  pk: 1
+  fields:
+    nom: WannaBeEngineers
+    abonnes:
+    - 1
+    - 2
+    - 3
+- model: communitymanager.communaute
+  pk: 2
+  fields:
+    nom: SciencesPasHeros
+    abonnes:
+    - 1
+    - 2
+    - 3
+- model: communitymanager.communaute
+  pk: 3
+  fields:
+    nom: FlyAboveSciencesPo
+    abonnes:
+    - 1
+    - 2
+    - 3
+- model: communitymanager.priorite
+  pk: 3
+  fields:
+    label: orange
+- model: communitymanager.priorite
+  pk: 6
+  fields:
+    label: red
+- model: communitymanager.priorite
+  pk: 7
+  fields:
+    label: yellow
+- model: communitymanager.priorite
+  pk: 8
+  fields:
+    label: white
+- model: communitymanager.priorite
+  pk: 9
+  fields:
+    label: tomato
+- model: communitymanager.post
+  pk: 1
+  fields:
+    titre: Mon premier post
+    description: "Voici le premier post de la communaut\xE9 WannaBeEngineers.\r\nDemain,
+      19 mai, le couvre-feu est repouss\xE9 \xE0 21h, f\xEAtons cela !"
+    date_creation: null
+    communaute: 1
+    priorite: 3
+    evenementiel: true
+    date_evenement: 2021-05-19
+    auteur: 1
+- model: communitymanager.post
+  pk: 11
+  fields:
+    titre: Mon premier
+    description: "Voici le premier post de la communaut\xE9 WannaBeEngineers.\r\nDemain,
+      19 mai, le couvre-feu est repouss\xE9 \xE0 21h, f\xEAtons cela !"
+    date_creation: null
+    communaute: 1
+    priorite: 3
+    evenementiel: true
+    date_evenement: 2021-05-19
+    auteur: 1
+- model: communitymanager.post
+  pk: 12
+  fields:
+    titre: Mon premier
+    description: "Voici le premier post de la communaut\xE9 WannaBeEngineers.\r\nDemain,
+      19 mai, le couvre-feu est repouss\xE9 \xE0 21h, f\xEAtons cela !"
+    date_creation: null
+    communaute: 1
+    priorite: 3
+    evenementiel: true
+    date_evenement: 2021-05-19
+    auteur: 1
+- model: communitymanager.post
+  pk: 25
+  fields:
+    titre: Normalement tout en haut
+    description: Touuuut ennnn haauuut
+    date_creation: null
+    communaute: 1
+    priorite: 3
+    evenementiel: true
+    date_evenement: 2021-09-25
+    auteur: 1
+- model: communitymanager.post
+  pk: 26
+  fields:
+    titre: "Bient\xF4t le rendu du projet !"
+    description: "C'est demain le rendu du projet, d\xE9p\xEAchons-nous !"
+    date_creation: null
+    communaute: 3
+    priorite: 9
+    evenementiel: true
+    date_evenement: 2029-06-12
+    auteur: 1
+- model: communitymanager.post
+  pk: 27
+  fields:
+    titre: Redddd
+    description: redred
+    date_creation: null
+    communaute: 1
+    priorite: 6
+    evenementiel: true
+    date_evenement: 2021-02-21
+    auteur: 1
+- model: communitymanager.post
+  pk: 28
+  fields:
+    titre: Test cercle blanc
+    description: ddd
+    date_creation: null
+    communaute: 2
+    priorite: 8
+    evenementiel: true
+    date_evenement: 2019-09-12
+    auteur: 1
+- model: communitymanager.post
+  pk: 29
+  fields:
+    titre: Test date
+    description: tesssst
+    date_creation: null
+    communaute: 3
+    priorite: 6
+    evenementiel: true
+    date_evenement: 2022-07-03
+    auteur: 2
+- model: communitymanager.post
+  pk: 30
+  fields:
+    titre: Bienvenue sur mon projet individuel !
+    description: "Je vous souhaite la bienvenue sur mon projet individuel. Libre \xE0
+      vous de naviguer sur ce site comme bon vous semble et d'explorer ses fonctionnalit\xE9s
+      !\r\nJ'esp\xE8re qu'il vous plaira.\r\nA bient\xF4t !"
+    date_creation: null
+    communaute: 3
+    priorite: 6
+    evenementiel: true
+    date_evenement: 2021-05-27
+    auteur: 2
+- model: communitymanager.post
+  pk: 31
+  fields:
+    titre: Coucou
+    description: C'est moi
+    date_creation: 2021-05-26 21:30:06.645533+00:00
+    communaute: 3
+    priorite: 9
+    evenementiel: false
+    date_evenement: null
+    auteur: 2
+- model: communitymanager.commentaire
+  pk: 1
+  fields:
+    date_creation: null
+    contenu: "La r\xE9ouverture des terrasses, c'est super !"
+    auteur: 3
+    post: 1
+- model: communitymanager.commentaire
+  pk: 2
+  fields:
+    date_creation: null
+    contenu: "Personnellement, je pense que cela va relancer l'\xE9pid\xE9mie de COVID-19..."
+    auteur: 2
+    post: 1
+- model: communitymanager.commentaire
+  pk: 5
+  fields:
+    date_creation: null
+    contenu: "Moi je pense qu'il faut savoir se comporter mesur\xE9ment, c'est tout
+      !"
+    auteur: 1
+    post: 1
+- model: communitymanager.commentaire
+  pk: 7
+  fields:
+    date_creation: null
+    contenu: ''
+    auteur: 1
+    post: 11
+- model: communitymanager.commentaire
+  pk: 10
+  fields:
+    date_creation: null
+    contenu: yo
+    auteur: 1
+    post: 25
+- model: communitymanager.commentaire
+  pk: 11
+  fields:
+    date_creation: null
+    contenu: Coucou
+    auteur: 1
+    post: 26
+- model: communitymanager.commentaire
+  pk: 12
+  fields:
+    date_creation: null
+    contenu: Coucou
+    auteur: 1
+    post: 26
+- model: communitymanager.commentaire
+  pk: 13
+  fields:
+    date_creation: null
+    contenu: Coucou
+    auteur: 1
+    post: 26
+- model: communitymanager.commentaire
+  pk: 14
+  fields:
+    date_creation: null
+    contenu: Coucou
+    auteur: 1
+    post: 26
+- model: communitymanager.commentaire
+  pk: 15
+  fields:
+    date_creation: null
+    contenu: Salut !
+    auteur: 1
+    post: 26
+- model: communitymanager.commentaire
+  pk: 16
+  fields:
+    date_creation: null
+    contenu: Coucou!
+    auteur: 1
+    post: 27
+- model: communitymanager.commentaire
+  pk: 17
+  fields:
+    date_creation: null
+    contenu: Super ce post, merci !
+    auteur: 2
+    post: 27
+- model: communitymanager.commentaire
+  pk: 18
+  fields:
+    date_creation: null
+    contenu: Je suis le premier commentaire!
+    auteur: 2
+    post: 28
+- model: communitymanager.commentaire
+  pk: 19
+  fields:
+    date_creation: null
+    contenu: "Et moi le deuxi\xE8me !"
+    auteur: 2
+    post: 28
+- model: communitymanager.commentaire
+  pk: 20
+  fields:
+    date_creation: 2021-05-26 21:32:56.403978+00:00
+    contenu: Enfin !
+    auteur: 2
+    post: 31
