@@ -61,7 +61,7 @@ def post(request, post_id, droitmodif=1):
 
     return render(request, 'communitymanager/post.html', locals())
 
-""""Permet à un utilisateur de créer un nouveau post"""
+"""Permet à un utilisateur de créer un nouveau post"""
 @login_required()
 def nouveau_post(request):
     form = PostForm(request.POST or None)
